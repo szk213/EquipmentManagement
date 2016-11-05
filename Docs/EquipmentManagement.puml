@@ -1,0 +1,27 @@
+@startuml{plantuml_class_sample.png}
+title <size:18> EquipmentManagement </size>
+class EquipmentManager {
+  +add(String name, String[] tags, )
+  +edit(Equipment equipment)
+  +delete()
+}
+class Equipment {
+  __id
+  __name
+  __regDate
+  __modDate
+}
+class EquipmentFactory {
+  ~create(name, )
+}
+class EquipmentRepository {
+  ~save()
+  ~delete()
+}
+
+EquipmentManager *-- EquipmentFactory
+EquipmentManager *-- EquipmentRepository
+EquipmentRepository o-- Equipment
+EquipmentFactory o-- Equipment
+
+@enduml
